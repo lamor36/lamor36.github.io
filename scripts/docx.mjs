@@ -13,7 +13,7 @@ const heading = (text) =>
 
 const bullet = (text) => new Paragraph({ text, bullet: { level: 0 }, spacing: { after: 40 } });
 
-const projectBlock = (title, list) =>
+const projectBlock = (title, list, link) =>
   list?.length
     ? [
         heading(title),
@@ -32,6 +32,16 @@ const projectBlock = (title, list) =>
             children: [new TextRun({ text: p.tags.join(" · "), color: ACCENT, size: 19 })],
           }),
         ]),
+        ...(link
+          ? [
+              new Paragraph({
+                spacing: { before: 60 },
+                children: [
+                  new ExternalHyperlink({ link: link.url, children: [new TextRun({ text: `${link.label}: ${link.url}`, style: "Hyperlink" })] }),
+                ],
+              }),
+            ]
+          : []),
       ]
     : [];
 
@@ -83,7 +93,7 @@ export async function buildDocx(cv) {
     ]),
 
     ...projectBlock(l.projects, cv.projects),
-    ...projectBlock(l.personalProjects, cv.personalProjects),
+    ...projectBlock(l.personalProjects, cv.personalProjects, cv.personalProjectsLink),
 
     heading(l.education),
     ...cv.education.map(

@@ -25,6 +25,8 @@ await mkdir(path.join(dist, "assets"), { recursive: true });
 await cp(path.join(root, "src", "styles.css"), path.join(dist, "assets", "styles.css"));
 await cp(path.join(root, "src", "theme.js"), path.join(dist, "assets", "theme.js"));
 await writeFile(path.join(dist, ".nojekyll"), "");
+// Static files (e.g. profile photo referenced by basics.photo) live in public/ -> dist/assets/
+await cp(path.join(root, "public"), path.join(dist, "assets"), { recursive: true }).catch(() => {});
 
 for (const cv of cvs) {
   const dir = outDir(cv);

@@ -8,6 +8,7 @@ Todo está en [`data/cv.es.json`](data/cv.es.json) y [`data/cv.en.json`](data/cv
 
 - Nuevo puesto: añade un objeto al principio de `experience` (`"end": null` = actualidad).
 - Contacto: `basics.show` controla qué se publica (teléfono oculto por defecto: el repo es público).
+- Foto de perfil (opcional): guarda la imagen en `public/photo.jpg` (cuadrada, ≥ 400 px) y añade `"photo": "assets/photo.jpg"` dentro de `basics` en ambos JSON. Sin ese campo no se muestra nada.
 - Nuevo idioma: copia un JSON a `data/cv.<xx>.json`; aparece solo en el selector.
 
 ## Desarrollo

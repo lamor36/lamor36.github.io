@@ -64,10 +64,12 @@ export function renderPage(cv, { langs, defaultLang, base, fileBase }) {
 
   let n = 0;
   const num = () => String(++n).padStart(2, "0");
-  const projectSection = (id, title, cards) =>
+  const projectSection = (id, title, cards, link) =>
     cards
       ? `<section id="${id}"><h2><span>${num()}</span>${esc(title)}</h2>
-      <div class="projects">${cards}</div>
+      <div class="projects">${cards}</div>${
+        link ? `\n      <p class="section-link"><a class="btn" href="${esc(link.url)}" rel="noopener">${esc(link.label)} →</a></p>` : ""
+      }
     </section>`
       : "";
 
@@ -123,6 +125,7 @@ export function renderPage(cv, { langs, defaultLang, base, fileBase }) {
   <section class="hero">
     <div class="glow" aria-hidden="true"></div>
     <div class="wrap hero-in">
+      ${b.photo ? `<img class="avatar" src="${base}${esc(b.photo)}" alt="${esc(b.name)}" width="168" height="168">` : ""}
       <p class="eyebrow">${esc(role)}${rest.length ? ` <i>/</i> ${esc(rest.join(" / "))}` : ""}</p>
       <h1>${esc(b.name)}</h1>
       <p class="lead">${esc(cv.summary[0])}</p>
@@ -150,7 +153,7 @@ export function renderPage(cv, { langs, defaultLang, base, fileBase }) {
 
     ${projectSection("projects", l.projects, projects)}
 
-    ${projectSection("personal", l.personalProjects, personal)}
+    ${projectSection("personal", l.personalProjects, personal, cv.personalProjectsLink)}
 
     <section id="education"><h2><span>${num()}</span>${esc(l.education)}</h2>
       <ul class="edu">${edu}</ul>

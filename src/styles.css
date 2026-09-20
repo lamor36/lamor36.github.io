@@ -94,6 +94,9 @@ h3 { margin: 0; font: 600 1.1rem var(--head); }
 .project h3 { margin-bottom: 8px; }
 .project .chips { margin-top: auto; padding-top: 6px; }
 .project p.muted { font-size: 15px; }
+.section-link { margin: 20px 0 0; }
+.avatar { position: absolute; top: 0; right: 24px; width: 168px; height: 168px; object-fit: cover; border-radius: 50%; border: 3px solid var(--card); box-shadow: 0 0 0 2px var(--accent), 0 20px 50px -20px var(--accent); }
+@media (max-width: 860px) { .avatar { position: static; width: 112px; height: 112px; margin-bottom: 20px; } }
 .edu { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 16px; }
 .edu li { display: flex; flex-direction: column; gap: 4px; }
 .edu strong { font: 600 1rem var(--head); }
@@ -132,6 +135,9 @@ h3 { margin: 0; font: 600 1.1rem var(--head); }
   .about { columns: 1; font-size: 10pt; }
   .edu { grid-template-columns: repeat(2, 1fr); gap: 6px 20px; }
   .projects { grid-template-columns: 1fr; gap: 8px; }
+  .avatar { position: absolute; top: 0; right: 0; width: 80px; height: 80px; margin: 0; box-shadow: none; border: 0; }
+  .section-link .btn { padding: 0; border: 0; background: none; }
+  .section-link .btn::after { content: " " attr(href); color: var(--muted); }
   .project { break-inside: avoid; }
   .split { margin-top: 12px; }
 }

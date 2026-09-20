@@ -150,6 +150,7 @@
       "tags": [".NET 8", "Adyen", "REST APIs"]
     }
   ],
+  "personalProjectsLink": { "label": "Ver documentación", "url": "https://corebound-labs.github.io/docs/#/" },
   "personalProjects": [
     {
       "name": "EcoTrack",
