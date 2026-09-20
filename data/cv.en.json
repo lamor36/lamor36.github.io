@@ -1,0 +1,135 @@
+{
+  "lang": "en",
+  "labels": {
+    "profile": "Professional profile",
+    "skills": "Skills",
+    "experience": "Experience",
+    "education": "Education",
+    "languages": "Languages",
+    "interests": "Professional interests",
+    "present": "Present",
+    "downloadPdf": "Download PDF",
+    "downloadWord": "Download Word",
+    "contact": "Contact"
+  },
+  "basics": {
+    "name": "Martín Lamorgese",
+    "title": "Software Architect | Technical Lead | .NET",
+    "location": "Barcelona",
+    "email": "Martin_2710@hotmail.com",
+    "linkedin": "https://www.linkedin.com/in/martín-lamorgese",
+    "show": { "email": true, "phone": false, "linkedin": true, "location": true }
+  },
+  "summary": [
+    "Software Architect and Technical Lead with a full-stack .NET background, experienced in designing and evolving enterprise systems that connect business needs with scalable, maintainable technology solutions.",
+    "I have worked on business-critical platforms: logistics systems, point of sale (POS), corporate automation and internal management tools. My experience spans backend and frontend development through to defining technical architectures, integrating external systems and optimizing existing applications.",
+    "I currently technically lead projects and development teams, designing scalable architectures, integrating enterprise systems and building generative AI solutions using RAG, agents and tools connected to Azure AI Foundry."
+  ],
+  "skills": [
+    { "group": "Architecture", "items": ["Software Architecture", "System Design", "Distributed Systems", "Clean Architecture"] },
+    { "group": "Backend", "items": [".NET", "C#", "ASP.NET", "REST APIs", "Entity Framework"] },
+    { "group": "Data", "items": ["SQL Server", "Oracle", "MySQL"] },
+    { "group": "Frontend", "items": ["HTML", "Vanilla JS", "CSS"] },
+    { "group": "DevOps", "items": ["Git", "Azure DevOps", "CI/CD"] },
+    { "group": "AI", "items": ["RAG", "AI Agents", "Azure AI Foundry", "Azure AI Search"] },
+    { "group": "Automation | Low-code", "items": ["Power Platform", "Azure Logic Apps"] }
+  ],
+  "experience": [
+    {
+      "role": "Software Architect / Technical Lead",
+      "company": "DABA",
+      "location": "Barcelona",
+      "start": "2024-10",
+      "end": null,
+      "highlights": [
+        "Technical owner of a team of 3–4 developers: managing incoming demand (new development, incidents and enhancements) and end-to-end delivery.",
+        "Analyzing business requirements and defining scalable technical solutions that stay flexible and maintainable in the long run.",
+        "Breaking down and assigning tasks, actively supporting developers, unblocking work and ensuring technical quality.",
+        "Code review through Pull Requests in Azure DevOps, enforcing best practices and Clean Architecture principles.",
+        "Led a corporate automation platform for centralized Active Directory management and a CMDB for end-to-end IT asset management.",
+        "Evolved internal platforms such as SmartPicking and the Point of Sale, improving performance, reliability and scalability.",
+        "Designed and built a generative AI platform (“Agent Configurator”) to create enterprise agents on Azure AI Foundry, with dynamic selection among multiple LLMs.",
+        "Implemented RAG with Azure AI Search over an indexed private knowledge base, agent-to-agent communication and external tools (e.g. translation via Cognitive Services).",
+        "Defined the architecture for future corporate API integrations, letting agents query internal systems in real time."
+      ]
+    },
+    {
+      "role": "Full Stack Developer (.NET)",
+      "company": "DABA",
+      "location": "Barcelona",
+      "start": "2024-03",
+      "end": "2024-09",
+      "highlights": [
+        "Built a Point of Sale (POS) system on .NET 8 integrated with Adyen payment terminals and automatic ticket generation.",
+        "Evolved SmartPicking: goods receiving, order picking and inventory on industrial mobile devices.",
+        "Implemented REST API integrations to automate communication with external messaging services.",
+        "Built internal tools to calculate and manage staff incentives.",
+        "Evolutionary maintenance and refactoring of .NET Framework applications."
+      ]
+    },
+    {
+      "role": ".NET Developer",
+      "company": "Prime IT",
+      "location": "Barcelona",
+      "start": "2023-05",
+      "end": "2024-02",
+      "highlights": [
+        "Corporate web applications in .NET using multi-layer architectures and the MVC pattern.",
+        "Full design and development of SmartPicking, a logistics system for goods receiving and order picking on PDA devices.",
+        "Offline-first architecture: data stored locally in IndexedDB and synced automatically when connectivity returns.",
+        "Frontend in HTML, CSS and JavaScript optimized for industrial devices; backend in C#, .NET, Entity Framework and SQL Server.",
+        "REST APIs to sync devices with the central system; Git and Azure DevOps."
+      ]
+    },
+    {
+      "role": ".NET Analyst Developer",
+      "company": "CGI",
+      "location": "Barcelona",
+      "start": "2022-08",
+      "end": "2023-04",
+      "highlights": [
+        "Development and maintenance of critical desktop applications in C# and VB.NET on legacy environments (.NET Framework).",
+        "Analysis and refactoring of complex legacy code to deliver new features.",
+        "Adapted the system to changes in the client's business rules.",
+        "Optimized SQL queries on Oracle; technical documentation and production support in high-criticality environments."
+      ]
+    },
+    {
+      "role": ".NET Web Developer",
+      "company": "Brainworks Solutions",
+      "location": "Barcelona",
+      "start": "2021-09",
+      "end": "2022-06",
+      "highlights": [
+        "Corporate web applications for multiple clients using ASP.NET MVC.",
+        "Integrations with third-party REST APIs.",
+        "Query and process optimization on MySQL.",
+        "New features, evolutionary maintenance, functional testing and pre-release validation."
+      ]
+    },
+    {
+      "role": "Software Developer (.NET)",
+      "company": "JNext",
+      "location": "Buenos Aires",
+      "start": "2021-09",
+      "end": "2022-07",
+      "highlights": [
+        "HR and time-tracking solutions: web platform for payroll generation and employee management.",
+        "REST APIs to integrate internal systems and mobile applications.",
+        "Cross-platform Xamarin mobile app for viewing payslips and digitally signing documents.",
+        "Biometric device integration over TCP/IP and dynamic reports with Crystal Reports."
+      ]
+    }
+  ],
+  "education": [
+    { "title": ".NET Programming", "institution": "Universidad Tecnológica Nacional", "period": "2020" },
+    { "title": "Microsoft Developer Engineer (.NET)", "institution": "Educación IT", "period": "2018 – 2019" },
+    { "title": "Systems Engineering", "institution": "Universidad Tecnológica Nacional", "period": "2017 – 2018" },
+    { "title": "Electromechanical Technician", "institution": "Colegio secundario León XIII", "period": "2010 – 2016" }
+  ],
+  "languages": [
+    { "name": "Spanish", "level": "Native" },
+    { "name": "English", "level": "Technical" }
+  ],
+  "interests": "Software architecture, distributed systems, applied artificial intelligence and enterprise platform design."
+}

@@ -1,0 +1,135 @@
+{
+  "lang": "es",
+  "labels": {
+    "profile": "Perfil profesional",
+    "skills": "Aptitudes",
+    "experience": "Experiencia",
+    "education": "Educación",
+    "languages": "Idiomas",
+    "interests": "Intereses profesionales",
+    "present": "Actualidad",
+    "downloadPdf": "Descargar PDF",
+    "downloadWord": "Descargar Word",
+    "contact": "Contacto"
+  },
+  "basics": {
+    "name": "Martín Lamorgese",
+    "title": "Software Architect | Technical Lead | .NET",
+    "location": "Barcelona",
+    "email": "Martin_2710@hotmail.com",
+    "linkedin": "https://www.linkedin.com/in/martín-lamorgese",
+    "show": { "email": true, "phone": false, "linkedin": true, "location": true }
+  },
+  "summary": [
+    "Software Architect y Technical Lead con background full-stack en .NET y experiencia diseñando y evolucionando sistemas empresariales que conectan necesidades de negocio con soluciones tecnológicas escalables y mantenibles.",
+    "He participado en el desarrollo de plataformas críticas de negocio: sistemas logísticos, puntos de venta (POS), automatización corporativa y herramientas internas de gestión. Mi experiencia abarca desde backend y frontend hasta la definición de arquitecturas técnicas, integraciones con sistemas externos y optimización de aplicaciones existentes.",
+    "Actualmente lidero técnicamente proyectos y equipos de desarrollo, diseñando arquitecturas escalables, integrando sistemas empresariales y desarrollando soluciones de IA generativa mediante RAG, agentes y herramientas conectadas a Azure AI Foundry."
+  ],
+  "skills": [
+    { "group": "Arquitectura", "items": ["Software Architecture", "System Design", "Distributed Systems", "Clean Architecture"] },
+    { "group": "Backend", "items": [".NET", "C#", "ASP.NET", "REST APIs", "Entity Framework"] },
+    { "group": "Datos", "items": ["SQL Server", "Oracle", "MySQL"] },
+    { "group": "Frontend", "items": ["HTML", "Vanilla JS", "CSS"] },
+    { "group": "DevOps", "items": ["Git", "Azure DevOps", "CI/CD"] },
+    { "group": "IA", "items": ["RAG", "AI Agents", "Azure AI Foundry", "Azure AI Search"] },
+    { "group": "Automatización | Low-code", "items": ["Power Platform", "Azure Logic Apps"] }
+  ],
+  "experience": [
+    {
+      "role": "Software Architect / Technical Lead",
+      "company": "DABA",
+      "location": "Barcelona",
+      "start": "2024-10",
+      "end": null,
+      "highlights": [
+        "Responsable técnico de un equipo de 3–4 desarrolladores: gestión de la demanda (nuevos desarrollos, incidencias y evolutivos) y entrega end-to-end.",
+        "Análisis de requerimientos de negocio y definición de soluciones técnicas escalables, flexibles y mantenibles a largo plazo.",
+        "Desglose y asignación de tareas, acompañamiento activo, resolución de bloqueos y garantía de calidad técnica.",
+        "Revisión de código mediante Pull Requests en Azure DevOps, aplicando buenas prácticas y principios de Clean Architecture.",
+        "Liderazgo de una plataforma de automatización corporativa para la gestión centralizada de Active Directory y de una CMDB para la gestión integral de activos IT.",
+        "Evolución de plataformas internas como SmartPicking y el Punto de Venta, mejorando rendimiento, fiabilidad y escalabilidad.",
+        "Diseño y desarrollo de una plataforma de IA generativa (“Configurador de Agentes”) para crear agentes empresariales sobre Azure AI Foundry, con selección dinámica entre múltiples modelos LLM.",
+        "Implementación de RAG con Azure AI Search sobre una base de conocimiento privada indexada, comunicación entre agentes y uso de herramientas externas (p. ej. traducción con Cognitive Services).",
+        "Definición de la arquitectura para futuras integraciones con APIs corporativas, permitiendo a los agentes consultar información en tiempo real de los sistemas internos."
+      ]
+    },
+    {
+      "role": "Full Stack Developer (.NET)",
+      "company": "DABA",
+      "location": "Barcelona",
+      "start": "2024-03",
+      "end": "2024-09",
+      "highlights": [
+        "Desarrollo de un sistema de Punto de Venta (POS) en .NET 8 integrado con terminales de pago Adyen y generación automática de tickets.",
+        "Evolución de SmartPicking: recepción de mercancía, preparación de pedidos e inventario con dispositivos móviles industriales.",
+        "Integraciones con APIs REST para automatizar la comunicación con servicios externos de mensajería.",
+        "Herramientas internas para el cálculo y gestión de incentivos del personal.",
+        "Mantenimiento evolutivo y refactorización de aplicaciones en .NET Framework."
+      ]
+    },
+    {
+      "role": ".NET Developer",
+      "company": "Prime IT",
+      "location": "Barcelona",
+      "start": "2023-05",
+      "end": "2024-02",
+      "highlights": [
+        "Aplicaciones web corporativas en .NET con arquitecturas multicapa y patrón MVC.",
+        "Diseño y desarrollo completo de SmartPicking, sistema logístico para recepción de mercancía y preparación de pedidos mediante PDA.",
+        "Arquitectura offline-first: datos en IndexedDB con sincronización automática al recuperar conectividad.",
+        "Frontend en HTML, CSS y JavaScript optimizado para dispositivos industriales; backend en C#, .NET, Entity Framework y SQL Server.",
+        "APIs REST para sincronización entre dispositivos y sistema central; Git y Azure DevOps."
+      ]
+    },
+    {
+      "role": ".NET Analyst Developer",
+      "company": "CGI",
+      "location": "Barcelona",
+      "start": "2022-08",
+      "end": "2023-04",
+      "highlights": [
+        "Desarrollo y mantenimiento de aplicaciones de escritorio críticas en C# y VB.NET sobre entornos legacy (.NET Framework).",
+        "Análisis y refactorización de código legado complejo para implementar nuevas funcionalidades.",
+        "Adaptación del sistema a cambios en reglas de negocio del cliente.",
+        "Optimización de consultas SQL sobre Oracle; documentación técnica y soporte en producción en entornos de alta criticidad."
+      ]
+    },
+    {
+      "role": ".NET Web Developer",
+      "company": "Brainworks Solutions",
+      "location": "Barcelona",
+      "start": "2021-09",
+      "end": "2022-06",
+      "highlights": [
+        "Aplicaciones web corporativas para múltiples clientes con ASP.NET MVC.",
+        "Integraciones con APIs REST de terceros.",
+        "Optimización de consultas y procesos sobre MySQL.",
+        "Nuevas funcionalidades, mantenimiento evolutivo, testing funcional y validación previa a despliegues."
+      ]
+    },
+    {
+      "role": "Software Developer (.NET)",
+      "company": "JNext",
+      "location": "Buenos Aires",
+      "start": "2021-09",
+      "end": "2022-07",
+      "highlights": [
+        "Soluciones para gestión de recursos humanos y control horario: plataforma web de nóminas y gestión de empleados.",
+        "APIs REST para integrar sistemas internos y aplicaciones móviles.",
+        "App móvil multiplataforma en Xamarin para consulta de nóminas y firma digital de documentos.",
+        "Integración con dispositivos biométricos mediante TCP/IP y reportes dinámicos con Crystal Reports."
+      ]
+    }
+  ],
+  "education": [
+    { "title": "Programación .NET", "institution": "Universidad Tecnológica Nacional", "period": "2020" },
+    { "title": "Microsoft Developer Engineer (.NET)", "institution": "Educación IT", "period": "2018 – 2019" },
+    { "title": "Ingeniería en Sistemas", "institution": "Universidad Tecnológica Nacional", "period": "2017 – 2018" },
+    { "title": "Técnico electromecánico", "institution": "Colegio secundario León XIII", "period": "2010 – 2016" }
+  ],
+  "languages": [
+    { "name": "Español", "level": "Nativo" },
+    { "name": "Inglés", "level": "Técnico" }
+  ],
+  "interests": "Arquitectura de software, sistemas distribuidos, inteligencia artificial aplicada y diseño de plataformas empresariales."
+}

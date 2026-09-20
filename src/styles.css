@@ -1,0 +1,67 @@
+:root {
+  --bg: #f7f8fa; --card: #fff; --text: #1b2230; --muted: #5b6577; --line: #e3e7ee;
+  --accent: #2557d6; --chip: #eaf0ff; --chip-text: #1f47b0;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0e131c; --card: #151c28; --text: #e6eaf2; --muted: #98a2b5; --line: #263042;
+    --accent: #7ba2ff; --chip: #1c2a47; --chip-text: #a9c2ff;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0e131c; --card: #151c28; --text: #e6eaf2; --muted: #98a2b5; --line: #263042;
+  --accent: #7ba2ff; --chip: #1c2a47; --chip-text: #a9c2ff;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--bg); color: var(--text);
+  font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.toolbar { max-width: 860px; margin: 0 auto; padding: 16px 16px 0; display: flex; justify-content: space-between; align-items: center; }
+.langs a { padding: 4px 10px; border-radius: 6px; color: var(--muted); font-weight: 600; font-size: 14px; }
+.langs a.active { background: var(--chip); color: var(--chip-text); }
+#theme { background: none; border: 1px solid var(--line); color: var(--text); border-radius: 8px; width: 36px; height: 36px; cursor: pointer; font-size: 18px; }
+.page { max-width: 860px; margin: 16px auto 48px; padding: 32px; background: var(--card); border: 1px solid var(--line); border-radius: 14px; }
+.hero { display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; padding-bottom: 20px; border-bottom: 2px solid var(--accent); }
+h1 { margin: 0; font-size: 2.2rem; line-height: 1.15; }
+.title { margin: 4px 0 10px; font-size: 1.15rem; color: var(--accent); font-weight: 600; }
+.contacts { margin: 0; display: flex; flex-wrap: wrap; gap: 4px 16px; color: var(--muted); font-size: 14px; }
+.downloads { display: flex; gap: 8px; align-items: flex-start; }
+.btn { background: var(--accent); color: #fff; padding: 8px 14px; border-radius: 8px; font-weight: 600; font-size: 14px; }
+:root[data-theme="dark"] .btn { color: #0e131c; }
+.btn.ghost { background: transparent; color: var(--accent); border: 1px solid var(--accent); }
+.btn:hover { text-decoration: none; opacity: .9; }
+section { margin-top: 28px; }
+h2 { font-size: .85rem; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); margin: 0 0 12px; }
+h3 { margin: 0; font-size: 1.05rem; }
+p { margin: 0 0 10px; }
+.meta { color: var(--muted); font-size: 14px; }
+.skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px 24px; }
+.skill-group h3 { font-size: .9rem; color: var(--muted); margin-bottom: 6px; }
+.chips { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.chips li { background: var(--chip); color: var(--chip-text); padding: 2px 10px; border-radius: 999px; font-size: 13px; }
+.job { margin-bottom: 22px; padding-left: 16px; border-left: 3px solid var(--line); break-inside: avoid-page; }
+.job .at { color: var(--muted); font-weight: 500; }
+.job .meta { margin: 0 0 6px; }
+.job ul { margin: 0; padding-left: 18px; }
+.job li { margin-bottom: 4px; }
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+.edu, .plain { list-style: none; padding: 0; margin: 0 0 16px; }
+.edu li { display: flex; flex-direction: column; margin-bottom: 10px; }
+.plain li { margin-bottom: 4px; }
+@media (max-width: 640px) {
+  .page { padding: 20px; border-radius: 0; border-left: 0; border-right: 0; margin-top: 8px; }
+  .two { grid-template-columns: 1fr; }
+  h1 { font-size: 1.8rem; }
+}
+@media print {
+  :root, :root[data-theme="dark"] { --bg: #fff; --card: #fff; --text: #111; --muted: #555; --line: #ccc; --accent: #1d4ed8; --chip: #eef2ff; --chip-text: #1d4ed8; }
+  body { background: #fff; font-size: 10.5pt; line-height: 1.4; }
+  .no-print { display: none !important; }
+  .page { margin: 0; padding: 0; border: 0; max-width: none; }
+  section { margin-top: 16px; }
+  .job { margin-bottom: 12px; }
+  a { color: inherit; }
+}
