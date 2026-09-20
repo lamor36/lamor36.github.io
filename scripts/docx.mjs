@@ -193,7 +193,10 @@ export async function buildDocx(cv) {
   const doc = new Document({
     creator: b.name,
     title: `${b.name} — ${b.title}`,
-    styles: { default: { document: { run: { font: FONT, size: 21 } } } },
+    // Explicit white page: Word's dark mode only inverts colours on an "automatic" page background.
+    background: { color: "FFFFFF" },
+    // Tech terms (RAG, IndexedDB, .NET...) would otherwise be underlined red by the spell checker.
+    styles: { default: { document: { run: { font: FONT, size: 21, noProof: true, language: { value: cv.lang === "es" ? "es-ES" : "en-GB" } } } } },
     sections: [
       {
         properties: { page: { margin: { top: 850, bottom: 900, left: 850, right: 850, footer: 400 } } },
