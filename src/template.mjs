@@ -18,7 +18,7 @@ export function renderPage(cv, { langs, defaultLang, base, fileBase }) {
 
   const ctas = contacts
     .filter((c) => c.href)
-    .map((c) => `<a class="link" href="${esc(c.href)}" rel="noopener">${esc(c.text)}</a>`)
+    .map((c) => `<a class="link" href="${esc(c.href)}"${/^https?:/.test(c.href) ? ' target="_blank" rel="noopener noreferrer"' : ""}>${esc(c.text)}</a>`)
     .join("");
   const place = contacts.find((c) => !c.href);
 
@@ -68,7 +68,7 @@ export function renderPage(cv, { langs, defaultLang, base, fileBase }) {
     cards
       ? `<section id="${id}"><h2><span>${num()}</span>${esc(title)}</h2>
       <div class="projects">${cards}</div>${
-        link ? `\n      <p class="section-link"><a class="btn" href="${esc(link.url)}" rel="noopener">${esc(link.label)} →</a></p>` : ""
+        link ? `\n      <p class="section-link"><a class="btn" href="${esc(link.url)}" target="_blank" rel="noopener noreferrer">${esc(link.label)} →</a></p>` : ""
       }
     </section>`
       : "";
