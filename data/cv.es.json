@@ -20,6 +20,7 @@
     "linkedin": "https://www.linkedin.com/in/martín-lamorgese",
     "show": { "email": true, "phone": false, "linkedin": true, "location": true }
   },
+  "stats": [{"value":"5+","label":"años en desarrollo .NET"},{"value":"3–4","label":"desarrolladores a cargo"},{"value":"5","label":"empresas"},{"value":"RAG","label":"IA generativa y agentes"}],
   "summary": [
     "Software Architect y Technical Lead con background full-stack en .NET y experiencia diseñando y evolucionando sistemas empresariales que conectan necesidades de negocio con soluciones tecnológicas escalables y mantenibles.",
     "He participado en el desarrollo de plataformas críticas de negocio: sistemas logísticos, puntos de venta (POS), automatización corporativa y herramientas internas de gestión. Mi experiencia abarca desde backend y frontend hasta la definición de arquitecturas técnicas, integraciones con sistemas externos y optimización de aplicaciones existentes.",
