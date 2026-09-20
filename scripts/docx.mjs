@@ -13,6 +13,28 @@ const heading = (text) =>
 
 const bullet = (text) => new Paragraph({ text, bullet: { level: 0 }, spacing: { after: 40 } });
 
+const projectBlock = (title, list) =>
+  list?.length
+    ? [
+        heading(title),
+        ...list.flatMap((p) => [
+          new Paragraph({
+            spacing: { before: 100 },
+            keepNext: true,
+            children: [
+              new TextRun({ text: p.name, bold: true }),
+              new TextRun({ text: ` · ${p.context}`, color: MUTED, size: 20 }),
+            ],
+          }),
+          new Paragraph({ text: p.description, spacing: { after: 20 } }),
+          new Paragraph({
+            spacing: { after: 60 },
+            children: [new TextRun({ text: p.tags.join(" · "), color: ACCENT, size: 19 })],
+          }),
+        ]),
+      ]
+    : [];
+
 export async function buildDocx(cv) {
   const { basics: b, labels: l } = cv;
   const contact = [];
@@ -60,26 +82,8 @@ export async function buildDocx(cv) {
       ...e.highlights.map(bullet),
     ]),
 
-    ...(cv.projects?.length
-      ? [
-          heading(l.projects),
-          ...cv.projects.flatMap((p) => [
-            new Paragraph({
-              spacing: { before: 100 },
-              keepNext: true,
-              children: [
-                new TextRun({ text: p.name, bold: true }),
-                new TextRun({ text: ` · ${p.context}`, color: MUTED, size: 20 }),
-              ],
-            }),
-            new Paragraph({ text: p.description, spacing: { after: 20 } }),
-            new Paragraph({
-              spacing: { after: 60 },
-              children: [new TextRun({ text: p.tags.join(" · "), color: ACCENT, size: 19 })],
-            }),
-          ]),
-        ]
-      : []),
+    ...projectBlock(l.projects, cv.projects),
+    ...projectBlock(l.personalProjects, cv.personalProjects),
 
     heading(l.education),
     ...cv.education.map(

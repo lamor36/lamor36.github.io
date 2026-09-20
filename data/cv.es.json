@@ -5,6 +5,7 @@
     "skills": "Aptitudes",
     "experience": "Experiencia",
     "projects": "Proyectos destacados",
+    "personalProjects": "Proyectos personales",
     "education": "Educación",
     "languages": "Idiomas",
     "interests": "Intereses profesionales",
@@ -147,6 +148,26 @@
       "context": "DABA · 2024",
       "description": "Sistema de punto de venta en .NET 8 integrado con terminales de pago Adyen y generación automática de tickets.",
       "tags": [".NET 8", "Adyen", "REST APIs"]
+    }
+  ],
+  "personalProjects": [
+    {
+      "name": "EcoTrack",
+      "context": "Proyecto personal · Finanzas compartidas",
+      "description": "Aplicación web de finanzas personales y compartidas: cuentas, tarjetas, wallets y transacciones con permisos y porcentajes de titularidad granulares (Cuenta → Wallet → Transacción). Arquitectura en capas con Vertical Slice, cifrado de campos sensibles en reposo (AES-256-GCM), autenticación con Google OAuth y gestión de secretos con Infisical.",
+      "tags": [".NET 10", "ASP.NET Core MVC", "EF Core", "SQL Server", "Vertical Slice", "AES-256-GCM"]
+    },
+    {
+      "name": "UiMetadata · Razor Class Libraries",
+      "context": "Proyecto personal · Librería de UI",
+      "description": "Familia de RCL que genera grids, modales, subgrids, sidebar y gráficos a partir de ViewModels decorados con atributos y reflexión, sin conocer el dominio de negocio. Modularizada en paquetes independientes con reglas explícitas de dependencia.",
+      "tags": ["Razor Class Library", "C#", "Reflection", "JavaScript", "ApexCharts"]
+    },
+    {
+      "name": "Commons · Librerías .NET",
+      "context": "Proyecto personal · Componentes reutilizables",
+      "description": "Conjunto de librerías .NET reutilizables: repositorio CRUD genérico sobre EF Core con cifrado en reposo, auditoría, gestión global de excepciones, importación de CSV/XLS/XLSX, logging, jobs en segundo plano, email y provider de secretos.",
+      "tags": ["C#", ".NET", "EF Core", "Clean Architecture", "NuGet"]
     }
   ],
   "education": [

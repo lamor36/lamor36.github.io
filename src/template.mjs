@@ -48,16 +48,28 @@ export function renderPage(cv, { langs, defaultLang, base, fileBase }) {
     )
     .join("");
 
-  const projects = (cv.projects || [])
-    .map(
-      (p) => `<article class="card project">
+  const projectCards = (list = []) =>
+    list
+      .map(
+        (p) => `<article class="card project">
   <p class="period">${esc(p.context)}</p>
   <h3>${esc(p.name)}</h3>
   <p class="muted">${esc(p.description)}</p>
   <ul class="chips">${p.tags.map((t) => `<li>${esc(t)}</li>`).join("")}</ul>
 </article>`
-    )
-    .join("");
+      )
+      .join("");
+  const projects = projectCards(cv.projects);
+  const personal = projectCards(cv.personalProjects);
+
+  let n = 0;
+  const num = () => String(++n).padStart(2, "0");
+  const projectSection = (id, title, cards) =>
+    cards
+      ? `<section id="${id}"><h2><span>${num()}</span>${esc(title)}</h2>
+      <div class="projects">${cards}</div>
+    </section>`
+      : "";
 
   const edu = cv.education
     .map(
@@ -74,6 +86,7 @@ export function renderPage(cv, { langs, defaultLang, base, fileBase }) {
     ["skills", l.skills],
     ["experience", l.experience],
     ...(projects ? [["projects", l.projects]] : []),
+    ...(personal ? [["personal", l.personalProjects]] : []),
     ["education", l.education],
   ]
     .map(([id, t]) => `<a href="#${id}">${esc(t)}</a>`)
@@ -123,23 +136,23 @@ export function renderPage(cv, { langs, defaultLang, base, fileBase }) {
   </section>
 
   <div class="wrap">
-    <section id="about"><h2><span>01</span>${esc(l.profile)}</h2>
+    <section id="about"><h2><span>${num()}</span>${esc(l.profile)}</h2>
       <div class="about">${cv.summary.slice(1).map((p) => `<p>${esc(p)}</p>`).join("")}</div>
     </section>
 
-    <section id="skills"><h2><span>02</span>${esc(l.skills)}</h2>
+    <section id="skills"><h2><span>${num()}</span>${esc(l.skills)}</h2>
       <div class="skills">${skills}</div>
     </section>
 
-    <section id="experience"><h2><span>03</span>${esc(l.experience)}</h2>
+    <section id="experience"><h2><span>${num()}</span>${esc(l.experience)}</h2>
       <div class="timeline">${jobs}</div>
     </section>
 
-    ${projects ? `<section id="projects"><h2><span>04</span>${esc(l.projects)}</h2>
-      <div class="projects">${projects}</div>
-    </section>` : ""}
+    ${projectSection("projects", l.projects, projects)}
 
-    <section id="education"><h2><span>${projects ? "05" : "04"}</span>${esc(l.education)}</h2>
+    ${projectSection("personal", l.personalProjects, personal)}
+
+    <section id="education"><h2><span>${num()}</span>${esc(l.education)}</h2>
       <ul class="edu">${edu}</ul>
       <div class="split">
         <div><h3 class="sub">${esc(l.languages)}</h3><ul class="langlist">${langsList}</ul></div>

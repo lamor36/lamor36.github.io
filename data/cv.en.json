@@ -5,6 +5,7 @@
     "skills": "Skills",
     "experience": "Experience",
     "projects": "Featured projects",
+    "personalProjects": "Personal projects",
     "education": "Education",
     "languages": "Languages",
     "interests": "Professional interests",
@@ -147,6 +148,26 @@
       "context": "DABA · 2024",
       "description": "Point of sale system on .NET 8 integrated with Adyen payment terminals and automatic ticket generation.",
       "tags": [".NET 8", "Adyen", "REST APIs"]
+    }
+  ],
+  "personalProjects": [
+    {
+      "name": "EcoTrack",
+      "context": "Personal project · Shared finance",
+      "description": "Web app for personal and shared finances: accounts, cards, wallets and transactions with granular permissions and ownership percentages (Account → Wallet → Transaction). Layered architecture with Vertical Slice, sensitive fields encrypted at rest (AES-256-GCM), Google OAuth sign-in and secrets managed with Infisical.",
+      "tags": [".NET 10", "ASP.NET Core MVC", "EF Core", "SQL Server", "Vertical Slice", "AES-256-GCM"]
+    },
+    {
+      "name": "UiMetadata · Razor Class Libraries",
+      "context": "Personal project · UI library",
+      "description": "A family of RCLs that generates grids, modals, subgrids, sidebar and charts from attribute-decorated ViewModels using reflection, with no knowledge of the business domain. Split into independent packages with explicit dependency rules.",
+      "tags": ["Razor Class Library", "C#", "Reflection", "JavaScript", "ApexCharts"]
+    },
+    {
+      "name": "Commons · .NET libraries",
+      "context": "Personal project · Reusable components",
+      "description": "A set of reusable .NET libraries: generic CRUD repository over EF Core with encryption at rest, auditing, global exception handling, CSV/XLS/XLSX import, logging, background jobs, email and a secrets provider.",
+      "tags": ["C#", ".NET", "EF Core", "Clean Architecture", "NuGet"]
     }
   ],
   "education": [
