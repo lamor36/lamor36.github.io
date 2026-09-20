@@ -7,7 +7,7 @@ CV web (ES/EN) publicado en GitHub Pages. **Una sola fuente de datos** genera la
 Todo está en [`data/cv.es.json`](data/cv.es.json) y [`data/cv.en.json`](data/cv.en.json): perfil, aptitudes, experiencia, educación, idiomas.
 
 - Nuevo puesto: añade un objeto al principio de `experience` (`"end": null` = actualidad).
-- Contacto: `basics.show` controla qué se publica (teléfono oculto por defecto: el repo es público).
+- Contacto: `basics.show` controla qué se publica. El teléfono **no se guarda en el repo** (es público): no añadas `basics.phone` a los JSON.
 - Foto de perfil (opcional): guarda la imagen en `public/photo.jpg` (cuadrada, ≥ 400 px) y añade `"photo": "assets/photo.jpg"` dentro de `basics` en ambos JSON. Sin ese campo no se muestra nada.
 - Nuevo idioma: copia un JSON a `data/cv.<xx>.json`; aparece solo en el selector.
 
