@@ -4,6 +4,7 @@
     "profile": "Perfil profesional",
     "skills": "Aptitudes",
     "experience": "Experiencia",
+    "projects": "Proyectos destacados",
     "education": "Educación",
     "languages": "Idiomas",
     "interests": "Intereses profesionales",
@@ -120,6 +121,32 @@
         "App móvil multiplataforma en Xamarin para consulta de nóminas y firma digital de documentos.",
         "Integración con dispositivos biométricos mediante TCP/IP y reportes dinámicos con Crystal Reports."
       ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Configurador de Agentes",
+      "context": "DABA · 2024 – Actualidad",
+      "description": "Plataforma de IA generativa para crear agentes empresariales sobre Azure AI Foundry, con selección dinámica de modelos LLM, RAG sobre una base de conocimiento privada, comunicación entre agentes y herramientas externas.",
+      "tags": ["Azure AI Foundry", "RAG", "Azure AI Search", "AI Agents", "LLM"]
+    },
+    {
+      "name": "Automatización corporativa y CMDB",
+      "context": "DABA · 2024 – Actualidad",
+      "description": "Plataforma para la gestión centralizada de Active Directory y CMDB para la gestión integral de activos IT, con arquitectura escalable y segura.",
+      "tags": [".NET", "Clean Architecture", "Active Directory", "CMDB"]
+    },
+    {
+      "name": "SmartPicking",
+      "context": "Prime IT y DABA · 2023 – Actualidad",
+      "description": "Sistema logístico de recepción de mercancía, preparación de pedidos e inventario en dispositivos móviles industriales, con arquitectura offline-first (IndexedDB) y sincronización automática vía APIs REST.",
+      "tags": ["C#", ".NET", "Offline-first", "IndexedDB", "SQL Server"]
+    },
+    {
+      "name": "Punto de Venta (POS)",
+      "context": "DABA · 2024",
+      "description": "Sistema de punto de venta en .NET 8 integrado con terminales de pago Adyen y generación automática de tickets.",
+      "tags": [".NET 8", "Adyen", "REST APIs"]
     }
   ],
   "education": [

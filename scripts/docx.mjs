@@ -60,6 +60,27 @@ export async function buildDocx(cv) {
       ...e.highlights.map(bullet),
     ]),
 
+    ...(cv.projects?.length
+      ? [
+          heading(l.projects),
+          ...cv.projects.flatMap((p) => [
+            new Paragraph({
+              spacing: { before: 100 },
+              keepNext: true,
+              children: [
+                new TextRun({ text: p.name, bold: true }),
+                new TextRun({ text: ` · ${p.context}`, color: MUTED, size: 20 }),
+              ],
+            }),
+            new Paragraph({ text: p.description, spacing: { after: 20 } }),
+            new Paragraph({
+              spacing: { after: 60 },
+              children: [new TextRun({ text: p.tags.join(" · "), color: ACCENT, size: 19 })],
+            }),
+          ]),
+        ]
+      : []),
+
     heading(l.education),
     ...cv.education.map(
       (e) =>

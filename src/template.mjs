@@ -48,6 +48,17 @@ export function renderPage(cv, { langs, defaultLang, base, fileBase }) {
     )
     .join("");
 
+  const projects = (cv.projects || [])
+    .map(
+      (p) => `<article class="card project">
+  <p class="period">${esc(p.context)}</p>
+  <h3>${esc(p.name)}</h3>
+  <p class="muted">${esc(p.description)}</p>
+  <ul class="chips">${p.tags.map((t) => `<li>${esc(t)}</li>`).join("")}</ul>
+</article>`
+    )
+    .join("");
+
   const edu = cv.education
     .map(
       (e) => `<li class="card"><span class="period">${esc(e.period)}</span><strong>${esc(e.title)}</strong><span class="muted">${esc(e.institution)}</span></li>`
@@ -62,6 +73,7 @@ export function renderPage(cv, { langs, defaultLang, base, fileBase }) {
     ["about", l.profile],
     ["skills", l.skills],
     ["experience", l.experience],
+    ...(projects ? [["projects", l.projects]] : []),
     ["education", l.education],
   ]
     .map(([id, t]) => `<a href="#${id}">${esc(t)}</a>`)
@@ -123,7 +135,11 @@ export function renderPage(cv, { langs, defaultLang, base, fileBase }) {
       <div class="timeline">${jobs}</div>
     </section>
 
-    <section id="education"><h2><span>04</span>${esc(l.education)}</h2>
+    ${projects ? `<section id="projects"><h2><span>04</span>${esc(l.projects)}</h2>
+      <div class="projects">${projects}</div>
+    </section>` : ""}
+
+    <section id="education"><h2><span>${projects ? "05" : "04"}</span>${esc(l.education)}</h2>
       <ul class="edu">${edu}</ul>
       <div class="split">
         <div><h3 class="sub">${esc(l.languages)}</h3><ul class="langlist">${langsList}</ul></div>
