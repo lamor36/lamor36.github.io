@@ -59,35 +59,23 @@ const banner = (cv) => {
   const { basics: b } = cv;
   const contact = [];
   contactItems(cv).forEach((c, i) => {
-    if (i) contact.push(run("   |   ", { color: C.accentSoft, size: 19 }));
+    if (i) contact.push(run("   |   ", { color: C.muted, size: 19 }));
     contact.push(
       c.href
-        ? new ExternalHyperlink({ link: c.href, children: [run(c.text, { color: "FFFFFF", underline: {}, size: 19 })] })
-        : run(c.text, { color: "FFFFFF", size: 19 })
+        ? new ExternalHyperlink({ link: c.href, children: [run(c.text, { color: C.accent, underline: {}, size: 19 })] })
+        : run(c.text, { color: C.muted, size: 19 })
     );
   });
-  return new Table({
-    width: { size: W, type: WidthType.DXA },
-    columnWidths: [W],
-    borders: { ...noBorders, insideHorizontal: NONE, insideVertical: NONE },
-    rows: [
-      new TableRow({
-        children: [
-          new TableCell({
-            width: { size: W, type: WidthType.DXA },
-            shading: { type: ShadingType.CLEAR, fill: C.navy, color: "auto" },
-            margins: { top: 300, bottom: 260, left: 360, right: 360 },
-            borders: noBorders,
-            children: [
-              new Paragraph({ children: [run(b.name, { bold: true, size: 60, color: "FFFFFF" })] }),
-              new Paragraph({ spacing: { before: 40, after: 120 }, children: [run(b.title, { size: 25, color: C.accentSoft, bold: true })] }),
-              new Paragraph({ children: contact }),
-            ],
-          }),
-        ],
-      }),
-    ],
-  });
+  // No filled banner: fills and white-on-dark text get inverted badly by Word's dark mode.
+  return [
+    new Paragraph({ children: [run(b.name, { bold: true, size: 60 })] }),
+    new Paragraph({ spacing: { before: 20, after: 100 }, children: [run(b.title, { size: 25, color: C.accent, bold: true })] }),
+    new Paragraph({
+      spacing: { after: 60 },
+      border: { bottom: { style: BorderStyle.SINGLE, size: 18, color: C.accent, space: 8 } },
+      children: contact,
+    }),
+  ];
 };
 
 const statsRow = (stats) => {
@@ -100,8 +88,7 @@ const statsRow = (stats) => {
     cells.push(
       new TableCell({
         width: { size: cw, type: WidthType.DXA },
-        shading: { type: ShadingType.CLEAR, fill: C.tint, color: "auto" },
-        margins: { top: 100, bottom: 100, left: 160, right: 100 },
+        margins: { top: 60, bottom: 60, left: 160, right: 100 },
         borders: { top: NONE, bottom: NONE, right: NONE, left: { style: BorderStyle.SINGLE, size: 24, color: C.accent } },
         children: [
           new Paragraph({ children: [run(s.value, { bold: true, size: 34, color: C.accent })] }),
@@ -156,14 +143,14 @@ export async function buildDocx(cv) {
   const { basics: b, labels: l } = cv;
 
   const children = [
-    banner(cv),
+    ...banner(cv),
     ...statsRow(cv.stats),
 
     heading(l.profile),
     ...cv.summary.map((p) => new Paragraph({ spacing: { after: 100 }, children: [run(p, { size: 21 })] })),
 
     heading(l.skills),
-    twoColTable(cv.skills.map((s) => [s.group, s.items.join("  ·  ")]), 2400, true, C.tint),
+    twoColTable(cv.skills.map((s) => [s.group, s.items.join("  ·  ")]), 2400, true),
 
     heading(l.experience),
     ...cv.experience.flatMap((e) => [
