@@ -1,0 +1,55 @@
+@page { size: A4; margin: 0; }
+:root { --side: 70mm; --ink: #0f172a; --muted: #4b5568; --accent: #4f46e5; --accent2: #0ea5e9; }
+* { box-sizing: border-box; }
+/* Dark sidebar tile is exactly one page tall (297mm), so it repeats on every page. */
+html {
+  -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  background: linear-gradient(to right, #0f172a var(--side), #fff var(--side)) 0 0 / 100% 297mm repeat-y;
+}
+/* thead/tfoot repeat on each page: they give top/bottom breathing room on pages 2+ */
+.sheet { width: 100%; border-collapse: collapse; }
+.sheet td { padding: 0; vertical-align: top; }
+.sheet thead td, .sheet tfoot td { height: 11mm; }
+body { margin: 0; font: 8.7pt/1.42 Inter, "Segoe UI", sans-serif; color: var(--ink); }
+a { color: inherit; text-decoration: none; }
+p { margin: 0 0 4pt; }
+ul { margin: 0; padding: 0; list-style: none; }
+
+/* sidebar */
+.side { float: left; width: var(--side); padding: 1mm 7mm 8mm 8mm; color: #dbe3f4; }
+.first-page-pad { display: none; }
+.photo { display: block; width: 34mm; height: 34mm; border-radius: 50%; object-fit: cover; margin: 0 auto 8mm; border: 1.2mm solid #1e293b; }
+.block { margin-bottom: 7mm; }
+.side h2 { font: 700 7.5pt "Space Grotesk", Inter, sans-serif; letter-spacing: .18em; text-transform: uppercase; color: #8ea2ff; margin: 0 0 3mm; padding-bottom: 1.4mm; border-bottom: .3mm solid #26334f; }
+.contact li { margin-bottom: 1.6mm; word-break: break-all; }
+.sk { margin-bottom: 2.6mm; break-inside: avoid; }
+.sk h4 { font: 600 7.4pt Inter, sans-serif; color: #fff; margin: 0 0 .6mm; }
+.sk p { margin: 0; font-size: 7.9pt; color: #b7c3dc; line-height: 1.4; }
+.edu li { margin-bottom: 2.6mm; display: flex; flex-direction: column; }
+.edu strong { color: #fff; font-weight: 600; font-size: 8pt; }
+.edu span { color: #b7c3dc; font-size: 7.8pt; }
+.edu em { color: #8ea2ff; font-style: normal; font-size: 7.6pt; }
+.lang li { margin-bottom: 1mm; }
+.lang strong { color: #fff; font-weight: 600; margin-right: 1.5mm; }
+
+/* main */
+.main { margin-left: var(--side); padding: 1mm 12mm 0 10mm; }
+h1 { font: 700 27pt/1.05 "Space Grotesk", Inter, sans-serif; letter-spacing: -.02em; margin: 0; }
+.role { font: 600 10.5pt Inter, sans-serif; color: var(--accent); margin: 2mm 0 0; }
+.stats { display: flex; gap: 3mm; margin: 6mm 0 1mm; }
+.stats div { flex: 1; padding: 2.2mm 3mm; border: .25mm solid #dfe4f1; border-left: 1mm solid var(--accent); border-radius: 1.5mm; background: #f6f7fd; }
+.stats strong { display: block; font: 700 13pt "Space Grotesk", Inter, sans-serif; color: var(--accent); line-height: 1.1; }
+.stats span { font-size: 7pt; color: var(--muted); line-height: 1.2; display: block; }
+.main section { margin-top: 6mm; }
+.main h2 { font: 700 9.5pt "Space Grotesk", Inter, sans-serif; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); margin: 0 0 2.6mm; padding-bottom: 1.2mm; border-bottom: .35mm solid var(--accent); break-after: avoid; }
+.job, .proj { margin-bottom: 4mm; padding-left: 3.2mm; border-left: .5mm solid #dfe4f1; }
+.job, .proj { break-inside: avoid; }
+.row { display: flex; justify-content: space-between; align-items: baseline; gap: 4mm; }
+h3 { font: 600 9.6pt Inter, sans-serif; margin: 0; }
+.date { font: 500 7.6pt Inter, sans-serif; color: var(--accent); white-space: nowrap; }
+.co { color: var(--muted); font-weight: 500; margin-bottom: 1.5mm; }
+.job ul li { position: relative; padding-left: 3mm; margin-bottom: 1mm; color: #232c3f; }
+.job ul li::before { content: ""; position: absolute; left: 0; top: 1.5mm; width: 1.3mm; height: .5mm; background: var(--accent); }
+.proj p { color: #232c3f; }
+.tags { color: var(--accent); font-weight: 500; font-size: 7.8pt; }
+.doc { margin-top: 1mm; font-weight: 500; color: var(--accent); }

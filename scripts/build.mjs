@@ -4,6 +4,7 @@ import { readFile, writeFile, mkdir, cp, rm, readdir } from "node:fs/promises";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import path from "node:path";
 import { renderPage } from "../src/template.mjs";
+import { renderPrint } from "../src/print.mjs";
 import { buildDocx } from "./docx.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -42,17 +43,24 @@ for (const cv of cvs) {
 if (!skipPdf) {
   const { default: puppeteer } = await import("puppeteer");
   const browser = await puppeteer.launch({ args: ["--no-sandbox"] });
+  const css = await readFile(path.join(root, "src", "print.css"), "utf8");
+  const tmp = path.join(root, ".build");
+  await mkdir(tmp, { recursive: true });
   for (const cv of cvs) {
+    // Dedicated print layout (src/print.mjs + print.css), separate from the web page.
+    const html = path.join(tmp, `print-${cv.lang}.html`);
+    await writeFile(html, renderPrint(cv, { css, root }));
     const page = await browser.newPage();
-    await page.goto(pathToFileURL(path.join(outDir(cv), "index.html")).href, { waitUntil: "networkidle0" });
+    await page.goto(pathToFileURL(html).href, { waitUntil: "networkidle0" });
     await page.pdf({
       path: path.join(outDir(cv), `${fileBase(cv)}.pdf`),
       format: "A4",
       printBackground: true,
-      margin: { top: "14mm", bottom: "14mm", left: "14mm", right: "14mm" },
+      preferCSSPageSize: true,
     });
     await page.close();
   }
+  await rm(tmp, { recursive: true, force: true });
   await browser.close();
 }
 console.log(`Built ${langs.join(", ")} -> dist/${skipPdf ? " (PDF skipped)" : ""}`);
