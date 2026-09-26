@@ -100,6 +100,7 @@ export function renderPage(cv, { langs, defaultLang, base, fileBase }) {
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${esc(b.name)} — ${esc(role)}</title>
+<link rel="icon" type="image/svg+xml" href="${base}assets/favicon.svg">
 <meta name="description" content="${esc(cv.summary[0])}">
 <meta property="og:title" content="${esc(b.name)} — ${esc(b.title)}">
 <meta property="og:description" content="${esc(cv.summary[0])}">
