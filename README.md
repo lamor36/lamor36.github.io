@@ -23,5 +23,5 @@ Diseño: [`src/styles.css`](src/styles.css) (incluye estilos `@media print` para
 
 ## Despliegue
 
-Cada push a `main` ejecuta `.github/workflows/deploy.yml`, que construye y publica en GitHub Pages.
+Cada push a `master` ejecuta `.github/workflows/deploy.yml`, que construye y publica en GitHub Pages.
 Activar una vez: *Settings → Pages → Source: GitHub Actions*.
